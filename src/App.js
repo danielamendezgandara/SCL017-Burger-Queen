@@ -1,14 +1,31 @@
-//import logo from './logo.svg';
-import './App.css';
-import Posts from './components/Posts';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
-function App() {
+import Home from "./Home";
+import Waiter from "./Waiter";
+
+
+const App = () =>{
   return (
-    <div className="App">
-      <h1>Hola soy una app de React</h1>
-       <Posts></Posts>
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/waiter">
+            <Waiter />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
-}
+
+};
 
 export default App;
+
